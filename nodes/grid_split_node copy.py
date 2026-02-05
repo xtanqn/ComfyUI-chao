@@ -47,9 +47,6 @@ class ChaoGridSplitNode:
                     "max": 100, 
                     "step": 1
                 }),
-                "图片比例": (["不设定", "16:9", "9:16"], {
-                    "default": "不设定"
-                }),
             }
         }
     
@@ -58,47 +55,7 @@ class ChaoGridSplitNode:
     RETURN_NAMES = ("分镜批次 (Batch 4)",)
     FUNCTION = "split_grid"
     
-    def crop_to_aspect_ratio(self, img, ratio):
-        """
-        根据比例裁剪图片，最短边不变，裁剪最长边
-        
-        Args:
-            img: 输入图片 (shape: [height, width, channels])
-            ratio: 目标比例 ("16:9" 或 "9:16")
-            
-        Returns:
-            裁剪后的图片
-        """
-        height, width = img.shape[:2]
-        
-        if ratio == "16:9":
-            target_ratio = 16 / 9
-        elif ratio == "9:16":
-            target_ratio = 9 / 16
-        else:
-            return img
-        
-        current_ratio = width / height
-        
-        if current_ratio == target_ratio:
-            return img
-        
-        if current_ratio > target_ratio:
-            # 图片太宽，需要裁剪宽度
-            new_width = int(height * target_ratio)
-            crop_left = (width - new_width) // 2
-            crop_right = crop_left + new_width
-            cropped = img[:, crop_left:crop_right]
-        else:
-            # 图片太高，需要裁剪高度
-            new_height = int(width / target_ratio)
-            crop_top = (height - new_height) // 2
-            crop_bottom = crop_top + new_height
-            cropped = img[crop_top:crop_bottom, :]
-        
-        return cropped
-    
-    def split_grid(self, image, 宫格间距=0, 外围边框=0, 图片比例="不设定"):
+    def split_grid(self, image, 宫格间距=0, 外围边框=0):
         """
         拆分4宫格图片
         
@@ -106,7 +63,6 @@ class ChaoGridSplitNode:
             image: 输入的4宫格图片 (shape: [batch_size, height, width, channels])
             宫格间距: 宫格中间的边框宽度
             外围边框: 宫格图外围的边框宽度
-            图片比例: 拆分后图片的强制比例 ("不设定", "16:9", "9:16")
             
         Returns:
             包含4张拆分后图片的批次 (shape: [4, height/2, width/2, channels])
@@ -155,23 +111,16 @@ class ChaoGridSplitNode:
                 # 如果尺寸不匹配，进行调整
                 split_img = grid_image[y1:y1+single_height, x1:x1+single_width]
             
-            # 根据比例裁剪拆分后的图片
-            if 图片比例 != "不设定":
-                split_img = self.crop_to_aspect_ratio(split_img, 图片比例)
-            
             split_images.append(split_img)
         
         # 将4张图片组合成一个批次
         batch_images = torch.stack(split_images, dim=0)
         
-        # 获取最终输出尺寸
-        final_height, final_width = batch_images.shape[1], batch_images.shape[2]
-        
         # 验证输出尺寸
-        assert batch_images.shape[0] == 4, f"输出批次大小错误: {batch_images.shape[0]}，期望: 4"
-        assert batch_images.shape[3] == channels, f"输出通道数错误: {batch_images.shape[3]}，期望: {channels}"
+        assert batch_images.shape == (4, single_height, single_width, channels), \
+            f"输出尺寸错误: {batch_images.shape}，期望: (4, {single_height}, {single_width}, {channels})"
         
-        print(f"✅ 4宫格拆分成功: 输入尺寸={width}x{height}, 输出尺寸={final_width}x{final_height}, 中间边框={宫格间距}, 外围边框={外围边框}, 图片比例={图片比例}")
+        print(f"✅ 4宫格拆分成功: 输入尺寸={width}x{height}, 输出尺寸={single_width}x{single_height}, 中间边框={宫格间距}, 外围边框={外围边框}")
         
         return (batch_images,)
 
