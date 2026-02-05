@@ -17,7 +17,7 @@
 - 与ComfyUI前端ShowText组件完美兼容
 """
 
-class XishenSmartDisplayNode:
+class ChaoSmartDisplayNode:
     @classmethod
     def INPUT_TYPES(s):
         return {
@@ -33,7 +33,7 @@ class XishenSmartDisplayNode:
     INPUT_IS_LIST = True
     RETURN_TYPES = ("STRING",)
     FUNCTION = "notify"
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
     OUTPUT_NODE = True
     OUTPUT_IS_LIST = (True,)
 
@@ -92,9 +92,9 @@ class XishenSmartDisplayNode:
 
 # 注册节点
 NODE_CLASS_MAPPINGS = {
-    "XishenSmartDisplayNode": XishenSmartDisplayNode,
+    "ChaoSmartDisplayNode": ChaoSmartDisplayNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "XishenSmartDisplayNode": "智能展示文本-xishen",
+    "ChaoSmartDisplayNode": "智能展示文本-chao",
 }

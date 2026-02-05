@@ -20,7 +20,7 @@ import json
 import os
 import random
 
-class XishenCommonPromptNode:
+class ChaoCommonPromptNode:
     @classmethod
     def INPUT_TYPES(cls):
         # 定义一级分类和二级分类
@@ -38,11 +38,11 @@ class XishenCommonPromptNode:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("prompt_text",)
     FUNCTION = "generate_prompt"
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
 
     def generate_prompt(self, primary_category, secondary_category, seed):
         # 构建JSON文件路径
-        json_path = os.path.join(os.path.dirname(__file__), "..", "web", "extensions", "xishen_prompts.json")
+        json_path = os.path.join(os.path.dirname(__file__), "..", "web", "extensions", "chao_prompts.json")
         
         try:
             # 读取JSON文件
@@ -84,11 +84,11 @@ class XishenCommonPromptNode:
             return ("",)
 
 NODE_CLASS_MAPPINGS = {
-    "XishenCommonPromptNode": XishenCommonPromptNode,
+    "ChaoCommonPromptNode": ChaoCommonPromptNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "XishenCommonPromptNode": "常用提示词-xishen",
+    "ChaoCommonPromptNode": "常用提示词-chao",
 }
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

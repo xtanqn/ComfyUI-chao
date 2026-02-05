@@ -11,7 +11,7 @@ import torch
 import comfy.model_management
 
 
-class XishenRandomIntegerNode:
+class ChaoRandomIntegerNode:
     def __init__(self):
         self.current_sequence_value = None
         self.last_min = None
@@ -36,7 +36,7 @@ class XishenRandomIntegerNode:
     RETURN_TYPES = ("STRING", "INT")
     RETURN_NAMES = ("number_text", "number_int")
     FUNCTION = "generate_number"
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
 
     def generate_number(self, min_value, max_value, mode, seed, reset_sequence=0):
         # 保证 min <= max
@@ -90,9 +90,9 @@ class XishenRandomIntegerNode:
 
 
 NODE_CLASS_MAPPINGS = {
-    "XishenRandomIntegerNode": XishenRandomIntegerNode,
+    "ChaoRandomIntegerNode": ChaoRandomIntegerNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "XishenRandomIntegerNode": "随机整数-xishen",
+    "ChaoRandomIntegerNode": "随机整数-chao",
 }

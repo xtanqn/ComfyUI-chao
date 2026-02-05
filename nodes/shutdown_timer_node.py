@@ -2,7 +2,7 @@ import os
 import subprocess
 import platform
 
-class XishenShutdownTimerNode:
+class ChaoShutdownTimerNode:
     @classmethod
     def INPUT_TYPES(s):
         return {
@@ -16,7 +16,7 @@ class XishenShutdownTimerNode:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("status",)  # 输出接口，返回状态信息
     FUNCTION = "check_and_shutdown"
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
 
     def check_and_shutdown(self, input_value, batch_number, countdown_time):
         # 检查输入值是否等于批次数字
@@ -53,11 +53,11 @@ class XishenShutdownTimerNode:
         return (status,)
 
 NODE_CLASS_MAPPINGS = {
-    "XishenShutdownTimerNode": XishenShutdownTimerNode,
+    "ChaoShutdownTimerNode": ChaoShutdownTimerNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "XishenShutdownTimerNode": "定时关机-xishen",
+    "ChaoShutdownTimerNode": "定时关机-chao",
 }
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

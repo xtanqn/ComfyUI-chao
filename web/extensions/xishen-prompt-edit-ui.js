@@ -368,7 +368,7 @@ app.registerExtension({
     
     async beforeRegisterNodeDef(nodeType, nodeData, app) {
         // Add custom styling or behavior to Prompt_Edit nodes if needed
-        if (nodeData.name === "XishenPromptEditNode") {
+        if (nodeData.name === "ChaoPromptEditNode") {
             const onNodeCreated = nodeType.prototype.onNodeCreated;
 
             nodeType.prototype.onNodeCreated = function() {

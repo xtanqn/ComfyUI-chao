@@ -5,9 +5,9 @@ import { ComfyWidgets } from '../../scripts/widgets.js';
 // TODO: This should need to be so complicated. Refactor at some point.
 
 app.registerExtension({
-    name: "xishen.SmartDisplay",
+    name: "chao.SmartDisplay",
     async beforeRegisterNodeDef(nodeType, nodeData, app) {
-        if (nodeData.name === "XishenSmartDisplayNode") {
+        if (nodeData.name === "ChaoSmartDisplayNode") {
             function populate(text) {
                 if (this.widgets) {
                     // On older frontend versions there is a hidden converted-widget

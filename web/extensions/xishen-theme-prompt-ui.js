@@ -2,10 +2,10 @@ import { app } from "../../../scripts/app.js";
 import { api } from "../../../scripts/api.js";
 
 app.registerExtension({
-    name: "Xishen.ThemePrompt",
+    name: "Chao.ThemePrompt",
     async nodeCreated(node, app) {
         // 1. 确认这是我们的节点
-        if (node.comfyClass !== "XishenThemePromptNode") return;
+        if (node.comfyClass !== "ChaoThemePromptNode") return;
 
         // 2. 获取 Widget (输入框) 对象
         const mainCategoryWidget = node.widgets.find(w => w.name === "primary_category");
@@ -20,12 +20,12 @@ app.registerExtension({
             const scriptUrl = new URL(import.meta.url);
             const scriptPath = scriptUrl.pathname;
             const extensionPath = scriptPath.substring(0, scriptPath.lastIndexOf('/') + 1);
-            const jsonUrl = extensionPath + "xishen_theme_prompts.json";
+            const jsonUrl = extensionPath + "chao_theme_prompts.json";
             
             const response = await fetch(jsonUrl);
             subjectsData = await response.json();
         } catch (error) {
-            console.error("Xishen Theme Prompt: Failed to fetch xishen_theme_prompts.json", error);
+            console.error("Chao Theme Prompt: Failed to fetch chao_theme_prompts.json", error);
             return; // 失败则退出
         }
 

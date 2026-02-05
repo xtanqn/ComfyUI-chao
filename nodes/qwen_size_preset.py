@@ -19,7 +19,7 @@ class Qwen_尺寸预设:
     """
     
     # 节点分类，按照项目规则设置
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
     
     # 预设尺寸映射，包含各种比例和对应的分辨率
     预设尺寸映射 = {
@@ -105,5 +105,5 @@ NODE_CLASS_MAPPINGS = {
 
 # 定义节点显示名称映射
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "🍡Qwen-尺寸预设": "🍡Qwen-尺寸预设-xishen"
+    "🍡Qwen-尺寸预设": "🍡Qwen-尺寸预设-chao"
 }

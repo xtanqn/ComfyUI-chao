@@ -22,7 +22,7 @@ class Qwen_打光预设:
     """
     
     # 节点分类，按照项目规则设置
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
     
     # 打光风格映射字典，包含每个大类对应的打光类型选项
     打光风格映射 = {
@@ -179,5 +179,5 @@ NODE_CLASS_MAPPINGS = {
 
 # 定义节点显示名称映射
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "🍥Qwen-打光预设": "🍥Qwen-打光预设-xishen"
+    "🍥Qwen-打光预设": "🍥Qwen-打光预设-chao"
 }

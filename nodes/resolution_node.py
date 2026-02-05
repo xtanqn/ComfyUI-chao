@@ -11,7 +11,7 @@ import os
 import json
 
 
-class XishenCommonResolutionNode:
+class ChaoCommonResolutionNode:
     def __init__(self):
         self.device = comfy.model_management.intermediate_device()
         # 加载分辨率数据
@@ -20,7 +20,7 @@ class XishenCommonResolutionNode:
     def load_resolution_data(self):
         """加载分辨率JSON数据"""
         current_dir = os.path.dirname(os.path.realpath(__file__))
-        json_path = os.path.join(current_dir, "..", "web", "extensions", "xishen_resolution_node.json")
+        json_path = os.path.join(current_dir, "..", "web", "extensions", "chao_resolution_node.json")
         
         try:
             with open(json_path, 'r', encoding='utf-8') as f:
@@ -77,7 +77,7 @@ class XishenCommonResolutionNode:
     RETURN_NAMES = ("Latent", "Width", "Height")
     RETURN_TYPES = ("LATENT", "INT", "INT")
     FUNCTION = "generate"
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
 
     def generate(self, aspect_ratio, resolution, 批量张数=1, align_to_8=False):
         # 查找选中分辨率的说明信息
@@ -116,9 +116,9 @@ class XishenCommonResolutionNode:
 
 
 NODE_CLASS_MAPPINGS = {
-    "XishenCommonResolutionNode": XishenCommonResolutionNode,
+    "ChaoCommonResolutionNode": ChaoCommonResolutionNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "XishenCommonResolutionNode": "常用分辨率-xishen",
+    "ChaoCommonResolutionNode": "常用分辨率-chao",
 }

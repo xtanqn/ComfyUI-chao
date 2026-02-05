@@ -23,11 +23,11 @@ class BatchSizeControl:
             },
         }
 
-    NAME = "批量控制-xishen"
+    NAME = "批量控制-chao"
     RETURN_TYPES = ("INT",)
     RETURN_NAMES = ("batch_size",)
     FUNCTION = "run"
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
     OUTPUT_NODE = True
 
     def run(self, tensor, batch_size, unique_id, prompt, extra_pnginfo):
@@ -65,5 +65,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "BatchSizeControl": "批量控制-xishen",
+    "BatchSizeControl": "批量控制-chao",
 }

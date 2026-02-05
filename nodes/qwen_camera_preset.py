@@ -50,7 +50,7 @@ class QwenCameraPresetNode:
     - 提示词: 根据输入参数生成的相机控制描述性提示词字符串
     """
     # 节点分类
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
     
     @classmethod
     def INPUT_TYPES(s):
@@ -156,5 +156,5 @@ NODE_CLASS_MAPPINGS = {
 
 # 节点显示名称映射
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "🍰Qwen-镜头预设": "🍰Qwen-镜头预设-xishen"
+    "🍰Qwen-镜头预设": "🍰Qwen-镜头预设-chao"
 }

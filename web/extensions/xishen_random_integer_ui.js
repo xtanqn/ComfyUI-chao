@@ -1,17 +1,17 @@
-// 文件：web/extensions/xishen_random_integer_ui.js
-// 目的：在 XishenRandomIntegerNode 上添加一个真实按钮用于触发重置
+// 文件：web/extensions/chao_random_integer_ui.js
+// 目的：在 ChaoRandomIntegerNode 上添加一个真实按钮用于触发重置
 import { app } from "../../scripts/app.js";
 
 app.registerExtension({
-    name: "xishen.random_integer_button",
+    name: "chao.random_integer_button",
     
     async setup() {
-        console.log("Xishen Random Integer Button extension loaded");
+        console.log("Chao Random Integer Button extension loaded");
     },
     
     async beforeRegisterNodeDef(nodeType, nodeData, app) {
-        // 只处理 XishenRandomIntegerNode 类型的节点
-        if (nodeData.name === "XishenRandomIntegerNode") {
+        // 只处理 ChaoRandomIntegerNode 类型的节点
+        if (nodeData.name === "ChaoRandomIntegerNode") {
             const onNodeCreated = nodeType.prototype.onNodeCreated;
 
             nodeType.prototype.onNodeCreated = function() {
@@ -45,7 +45,7 @@ app.registerExtension({
                             // 切换下一次的重置值（1变2，2变1）
                             button._nextResetValue = resetValue === 1 ? 2 : 1;
                         } catch (err) {
-                            console.error("xishen button callback error:", err);
+                            console.error("chao button callback error:", err);
                         }
                     });
 
@@ -56,7 +56,7 @@ app.registerExtension({
                     button._nextResetValue = 1; // 初始值设为1
                 } catch (error) {
                     // 非致命：不要冒泡错误到全局（避免崩溃其他扩展）
-                    console.error("xishen_random_integer_ui onNodeCreated error:", error);
+                    console.error("chao_random_integer_ui onNodeCreated error:", error);
                 }
 
                 return result;

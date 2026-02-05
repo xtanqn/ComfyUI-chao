@@ -11,7 +11,7 @@ class ImageBloomEffect:
     """
     
     # 设置节点分类，使用统一的项目分类
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
     
     # 定义输入参数
     @classmethod
@@ -210,5 +210,5 @@ NODE_CLASS_MAPPINGS = {
 
 # 定义节点显示名称映射
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "🍭Image-泛光效果": "🍭Image-泛光效果-xishen"
+    "🍭Image-泛光效果": "🍭Image-泛光效果-chao"
 }

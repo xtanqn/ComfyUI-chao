@@ -8,7 +8,7 @@ text_processing_node.py
 import re
 
 
-class XishenRemoveEmptyLinesNode:
+class ChaoRemoveEmptyLinesNode:
     @classmethod
     def INPUT_TYPES(cls):
         return {"required": {"text": ("STRING", {"default": "", "multiline": True})}}
@@ -16,7 +16,7 @@ class XishenRemoveEmptyLinesNode:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text",)
     FUNCTION = "remove_empty_lines"
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
 
     def remove_empty_lines(self, text):
         parts = re.findall(r"(.*?)(\r\n|\n|\r|$)", text)
@@ -28,9 +28,9 @@ class XishenRemoveEmptyLinesNode:
 
 
 NODE_CLASS_MAPPINGS = {
-    "XishenRemoveEmptyLinesNode": XishenRemoveEmptyLinesNode,
+    "ChaoRemoveEmptyLinesNode": ChaoRemoveEmptyLinesNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "XishenRemoveEmptyLinesNode": "去空行-xishen",
+    "ChaoRemoveEmptyLinesNode": "去空行-chao",
 }

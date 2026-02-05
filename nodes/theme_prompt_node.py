@@ -2,12 +2,12 @@ import random
 import os
 import json
 
-class XishenThemePromptNode:
+class ChaoThemePromptNode:
     @classmethod
     def INPUT_TYPES(s):
         # 在Python端直接加载JSON文件，提供完整的选项列表以解决验证错误
         current_dir = os.path.dirname(os.path.realpath(__file__))
-        json_path = os.path.join(current_dir, "..", "web", "extensions", "xishen_theme_prompts.json")
+        json_path = os.path.join(current_dir, "..", "web", "extensions", "chao_theme_prompts.json")
         
         primary_categories = ["Loading..."]
         secondary_categories = ["Please select main..."]
@@ -42,14 +42,14 @@ class XishenThemePromptNode:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("category_name",)
     FUNCTION = "get_category_name"
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
 
     def get_category_name(self, primary_category, secondary_category, control_option, seed):
         # 注意：这里我们再次读取文件，或者你可以将数据缓存到全局
         # 为了演示简单，这里假设数据通过前端传递，
         # 但为了安全和"随机"逻辑，最好还是后端再读一次
         current_dir = os.path.dirname(os.path.realpath(__file__))
-        json_path = os.path.join(current_dir, "..", "web", "extensions", "xishen_theme_prompts.json")
+        json_path = os.path.join(current_dir, "..", "web", "extensions", "chao_theme_prompts.json")
         data = {}
         try:
             with open(json_path, 'r', encoding='utf-8') as f:
@@ -78,11 +78,11 @@ class XishenThemePromptNode:
         return (result,)
 
 NODE_CLASS_MAPPINGS = {
-    "XishenThemePromptNode": XishenThemePromptNode,
+    "ChaoThemePromptNode": ChaoThemePromptNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "XishenThemePromptNode": "主题提示词-xishen",
+    "ChaoThemePromptNode": "主题提示词-chao",
 }
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

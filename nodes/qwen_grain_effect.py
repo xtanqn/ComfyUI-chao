@@ -9,7 +9,7 @@ class Qwen_Image_Grain_Effect:
     为图像添加电影颗粒效果，模拟胶片摄影的颗粒质感
     """
     # 定义节点分类
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
     # 定义节点名称
     NAME = "🍉Image-颗粒质感"
     # 定义节点描述
@@ -167,5 +167,5 @@ NODE_CLASS_MAPPINGS = {
 
 # 节点显示名称映射
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "🍉Image-颗粒质感": "🍉Image-颗粒质感-xishen",
+    "🍉Image-颗粒质感": "🍉Image-颗粒质感-chao",
 }

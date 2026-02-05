@@ -5,7 +5,7 @@ import time
 import threading
 from datetime import datetime, timedelta
 
-class XishenShutdownTimerAdvancedNode:
+class ChaoShutdownTimerAdvancedNode:
     # 类变量用于存储活动计时器
     active_timers = {}
     timer_lock = threading.Lock()
@@ -28,7 +28,7 @@ class XishenShutdownTimerAdvancedNode:
     RETURN_TYPES = ("STRING", "STRING")
     RETURN_NAMES = ("status", "timer_info")  # 输出接口，返回状态信息和计时器详情
     FUNCTION = "check_and_control"
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
 
     def get_system_command(self, action, delay):
         """根据系统类型和操作类型返回相应的命令"""
@@ -206,11 +206,11 @@ class XishenShutdownTimerAdvancedNode:
             return (f"❌ 发生错误: {str(e)}", "无活动计时器")
 
 NODE_CLASS_MAPPINGS = {
-    "XishenShutdownTimerAdvanced": XishenShutdownTimerAdvancedNode,
+    "ChaoShutdownTimerAdvanced": ChaoShutdownTimerAdvancedNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "XishenShutdownTimerAdvanced": "定时关机高级-xishen",
+    "ChaoShutdownTimerAdvanced": "定时关机高级-chao",
 }
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

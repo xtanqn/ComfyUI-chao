@@ -1,14 +1,14 @@
 import { app } from "../../../scripts/app.js"
 
 app.registerExtension({
-  name: "xishen_common_resolution_filter",
+  name: "chao_common_resolution_filter",
   setup() {
     // 使用setup钩子确保扩展在正确时机加载
-    console.log("Xishen Resolution Filter extension loaded");
+    console.log("Chao Resolution Filter extension loaded");
   },
   
   async nodeCreated(node) {
-    if (node.comfyClass !== "XishenCommonResolutionNode") return;
+    if (node.comfyClass !== "ChaoCommonResolutionNode") return;
     
     console.log("Setting up filter for resolution node");
     
@@ -21,7 +21,7 @@ app.registerExtension({
       const scriptPath = scriptUrl.pathname;
       const extensionPath = scriptPath.substring(0, scriptPath.lastIndexOf('/') + 1);
       // 构建JSON文件的路径，与当前脚本在同一目录下
-      const jsonUrl = extensionPath + "xishen_resolution_node.json";
+      const jsonUrl = extensionPath + "chao_resolution_node.json";
       
       const response = await fetch(jsonUrl);
       if (response.ok) {

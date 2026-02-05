@@ -38,7 +38,7 @@ import logging
 # Global storage for pending prompts
 pending_prompts = {}
 
-class XishenPromptEditNode:
+class ChaoPromptEditNode:
     """
     A node that receives text input, pauses execution, and waits for user to edit the text.
     """
@@ -66,7 +66,7 @@ class XishenPromptEditNode:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("edited_text",)
     FUNCTION = "edit_prompt"
-    CATEGORY = "🍡Comfyui-xishen"
+    CATEGORY = "🍡ComfyUI-chao"
     OUTPUT_NODE = True
 
     def __init__(self):
@@ -307,11 +307,11 @@ except Exception as e:
 
 # Register the node
 NODE_CLASS_MAPPINGS = {
-    "XishenPromptEditNode": XishenPromptEditNode
+    "ChaoPromptEditNode": ChaoPromptEditNode
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "XishenPromptEditNode": "编辑提示词-xishen"
+    "ChaoPromptEditNode": "编辑提示词-chao"
 }
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

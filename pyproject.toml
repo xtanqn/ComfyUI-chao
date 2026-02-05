@@ -1,14 +1,14 @@
 [project]
-name = "comfyui-xishen"
+name = "comfyui-chao"
 description = "A custom node for ComfyUI that generates random numbers as text output."
 version = "1.0.0"
 license = {file = "LICENSE"}
 
 [project.urls]
-Repository = "https://github.com/xtanqn/comfyui-xishen"
+Repository = "https://github.com/xtanqn/comfyui-chao"
 # 你可以替换为你的仓库链接
 
 [tool.comfy]
 PublisherId = "xtanqn"
-DisplayName = "comfyui-xishen"
+DisplayName = "comfyui-chao"
 Icon = ""
