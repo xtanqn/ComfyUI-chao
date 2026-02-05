@@ -1,6 +1,6 @@
 [project]
 name = "comfyui-chao"
-description = "A custom node for ComfyUI that generates random numbers as text output."
+description = "A comprehensive custom node pack for ComfyUI with 13 utility nodes including random number generation, resolution control, prompt management, and image effects."
 version = "1.0.0"
 license = {file = "LICENSE"}
 
