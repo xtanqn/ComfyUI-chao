@@ -1,0 +1,9 @@
+{
+  "name": "comfyui-chao",
+  "version": "1.0.0",
+  "description": "A comprehensive custom node pack for ComfyUI with 13 utility nodes including random number generation, resolution control, prompt management, and image effects.",
+  "author": "xtanqn",
+  "repository": "https://github.com/xtanqn/comfyui-chao",
+  "category": "utility",
+  "tags": ["random", "resolution", "prompt", "effects", "text"]
+}
