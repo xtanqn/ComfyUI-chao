@@ -1,0 +1,58 @@
+新增一个节点“4宫格拆分-chao”，主要功能是把一张4宫格图片拆分成4张图片
+有2个定义功能
+1，定义宫格中间的边框宽度 
+2.定义宫格图外围的边框宽度
+
+
+
+参考信息：
+
+{
+      "id": 11,
+      "type": "ShushuChaifen",
+      "pos": [
+        -2291.297569896634,
+        980.1301023657822
+      ],
+      "size": [
+        348.91953125,
+        82
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 10
+        },
+        {
+          "label": "split_width",
+          "name": "split_width",
+          "type": "INT",
+          "widget": {
+            "name": "split_width"
+          },
+          "link": null
+        },
+        {
+          "label": "border_width",
+          "name": "border_width",
+          "type": "INT",
+          "widget": {
+            "name": "border_width"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "分镜批次 (Batch 4)",
+          "name": "分镜批次 (Batch 4)",
+          "type": "IMAGE",
+          "links": [
+            11
+          ]
+        }
